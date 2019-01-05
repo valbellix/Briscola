@@ -2,12 +2,18 @@
 #define Deck_h
 
 #include "Card.h"
+#include <deque>
 
 class Deck {
 public:
-	virtual ~Deck() {}
+	Deck() {}
+	void Generate();
+
+	Card PickFirst();
+
+	unsigned short NumberOfCards() { return m_cards.size(); }
 private:
-	std::vector<Card> m_cards;
+	std::deque<Card> m_cards;
 };
 
 #endif
