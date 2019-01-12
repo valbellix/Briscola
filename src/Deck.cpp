@@ -14,11 +14,11 @@ void Deck::Generate()
 	do
 	{
 		size_t cardsToInsert = allCards.size();
-		int rnd = abs(dist(mt)) % cardsToInsert;
+		auto rnd = abs(dist(mt)) % cardsToInsert;
 
 		m_cards.push_back(allCards[rnd]);
 		allCards.erase(allCards.begin() + rnd);
-	} while(!allCards.empty());
+	} while (!allCards.empty());
 }
 
 Card Deck::PickFirst()
